@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Teelab</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <%- include('./block/style.ejs') %>
+</head>
+
+<body>
+    <%- include('./block/header.ejs') %>
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="height: 600px;">
+                    <img class="img-fluid"
+                        src="https://bizweb.dktcdn.net/100/415/697/themes/902041/assets/slider_1.jpg?1692958575148"
+                        alt="Image">
+                </div>
+                <div class="carousel-item" style="height: 600px;">
+                    <img class="img-fluid"
+                        src="https://bizweb.dktcdn.net/100/415/697/themes/902041/assets/slider_4.jpg?1692958575148"
+                        alt="Image">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-prev-icon mb-n2"></span>
+                </div>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-next-icon mb-n2"></span>
+                </div>
+            </a>
+        </div>
+        <!-- Featured Start -->
+        <div class="container-fluid pt-5">
+            <div class="row px-xl-5 pb-3">
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                        <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
+                        <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                        <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                        <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                        <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                        <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                    <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                        <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                        <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Featured End -->
+        <div class="container-fluid pt-5">
+            <div class="text-center mb-4">
+                <h2 class="section-title px-5"><span class="px-2">Enjoy Your Youth!</span></h2>
+                <div style="width: 600px;margin: auto;">
+                    <p style="text-align: justify;">Không chỉ là thời trang, TEELAB còn là “phòng thí nghiệm” của tuổi
+                        trẻ - nơi nghiên cứu và cho ra
+                        đời
+                        nguồn năng lượng mang tên “Youth”. Chúng mình luôn muốn tạo nên những trải nghiệm vui vẻ, năng
+                        động
+                        và trẻ trung.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Start -->
+        <div class="container-fluid pt-5">
+            <div class="text-center mb-4">
+                <h3 class="section-title px-5"><span class="px-2">Áo Thun</span></h3>
+            </div>
+            <div class="row px-xl-5 pb-3">
+                <% ao_thun.forEach(function(item){ %>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="<%= item.image %>" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">
+                                    <%= item.name %>
+                                </h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>
+                                        <% item.price=item.price.toLocaleString('vi-VN') %>
+                                            <%= item.price %> đ
+                                    </h6>
+                                </div>
+                            </div>
+                            <div style="margin: auto;"
+                                class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="/detail/<%= item.id %>" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>Xem ngay</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+        <div class="container-fluid pt-5">
+            <div class="text-center mb-4">
+                <h3 class="section-title px-5"><span class="px-2">Áo Polo</span></h3>
+            </div>
+            <div class="row px-xl-5 pb-3">
+                <% polo.forEach(function(item){ %>
+                    <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+                        <div class="card product-item border-0 mb-4">
+                            <div
+                                class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                <img class="img-fluid w-100" src="<%= item.image %>" alt="">
+                            </div>
+                            <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                                <h6 class="text-truncate mb-3">
+                                    <%= item.name %>
+                                </h6>
+                                <div class="d-flex justify-content-center">
+                                    <h6>
+                                        <% item.price=item.price.toLocaleString('vi-VN') %>
+                                            <%= item.price %> đ
+                                    </h6>
+                                </div>
+                            </div>
+                            <div style="margin: auto;"
+                                class="card-footer d-flex justify-content-between bg-light border">
+                                <a href="/detail/<%= item.id %>" class="btn btn-sm text-dark p-0"><i
+                                        class="fas fa-eye text-primary mr-1"></i>Xem ngay</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+        <!-- Products End -->
+
+
+        <!-- Subscribe Start -->
+        <div class="container-fluid bg-secondary my-5">
+            <div class="row justify-content-md-center py-5 px-xl-5">
+                <div class="col-md-6 col-12 py-5">
+                    <div class="text-center mb-2 pb-2">
+                        <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Find out TEELAB more</span>
+                        </h2>
+                    </div>
+                </div>
+                <section>
+                    <div class="text-center container py-5">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <div class="card">
+                                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                        <img src="https://bizweb.dktcdn.net/100/415/697/themes/902041/assets/feedback_1.jpg?1692958575148"
+                                            class="w-100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <div class="card">
+                                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                        <img src="https://bizweb.dktcdn.net/100/415/697/themes/902041/assets/feedback_2.jpg?1692958575148"
+                                            class="w-100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <div class="card">
+                                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                        <img src="https://bizweb.dktcdn.net/100/415/697/themes/902041/assets/feedback_6.jpg?1692958575148"
+                                            class="w-100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <div class="card">
+                                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                        <img src="https://bizweb.dktcdn.net/100/415/697/themes/902041/assets/feedback_3.jpg?1692958575148"
+                                            class="w-100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <div class="card">
+                                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                        <img src="https://bizweb.dktcdn.net/100/415/697/themes/902041/assets/feedback_4.jpg?1692958575148"
+                                            class="w-100" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 mb-4">
+                                <div class="card">
+                                    <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                        data-mdb-ripple-color="light">
+                                        <img src="https://bizweb.dktcdn.net/100/415/697/themes/902041/assets/feedback_8.jpg?1692958575148"
+                                            class="w-100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- Subscribe End -->
+        <%- include('./block/footer.ejs') %>
+            <%- include('./block/script.ejs') %>
+
+</body>
+
+</html>
