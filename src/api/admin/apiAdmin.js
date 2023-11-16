@@ -93,7 +93,9 @@ const handleLoginAdmin = async (req, res) => {
         //console.log(data.data);
         return res.redirect("/loginAdmin");
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data.detail)
+        req.flash("erro", `${error.response.data.detail}`);
+        return res.redirect("/loginAdmin");
     }
 };
 module.exports = {
