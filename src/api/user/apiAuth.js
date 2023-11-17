@@ -53,31 +53,8 @@ const handleAuth = async (token) => {
   }
 };
 
-const getUserLogin = async (req, res) => {
-  try {
-    let user_id = req.params.id;
-    let get_user = await axios.get(process.env.BASE_URL + `users/${user_id}`);
-    res.cookie("name", get_user.data.name, {
-      maxAge: 24 * 60 * 60 * 1000,
-    });
-    res.cookie("username", get_user.data.username, {
-      maxAge: 24 * 60 * 60 * 1000,
-    });
-    res.cookie("email", get_user.data.email, {
-      maxAge: 24 * 60 * 60 * 1000,
-    });
-    res.cookie("address", get_user.data.address, {
-      maxAge: 24 * 60 * 60 * 1000,
-    });
-    return res.render("user/myaccount.ejs", { user: get_user.data });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 module.exports = {
   handleRegister,
   handleLogin,
   handleAuth,
-  getUserLogin,
 };

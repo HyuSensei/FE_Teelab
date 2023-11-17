@@ -2,9 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
-//const webRoute = require("./routes/web");
 const cors = require("cors");
-//const apiRoute = require("./routes/api");
 const cookieParser = require("cookie-parser");
 const configViewEngine = require("./config/viewEngine");
 const session = require("express-session");
@@ -88,9 +86,6 @@ app.use((req, res, next) => {
   res.locals.adminaddress = req.cookies.adminaddress;
   next();
 });
-
-// app.use("/", webRoute);
-// app.use("/api/v1/", apiRoute);
 app.use("/", useRouter);
 app.use("/", adminRouter);
 app.listen(port, () => {
